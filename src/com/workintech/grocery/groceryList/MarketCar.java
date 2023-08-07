@@ -22,7 +22,9 @@ public class MarketCar {
         if (input.contains(",")) {
             String[] elements = input.split(",");
             for (String element : elements) {
-                if (element != null && !element.isEmpty()) {
+                //"" isEmpty sadece buna bakar
+                //" " trimle bu kontrolü yaptık.
+                if (element != null && !element.trim().isEmpty()) {
                     if (!checkItemIsInList(groceryList, element)) {
                         groceryList.add(element.trim());
                     }
@@ -49,7 +51,7 @@ public class MarketCar {
         if (input.contains(",")) {
             String[] elements = input.split(",");
             for (String element : elements) {
-                if (element != null && !element.isEmpty()) {
+                if (element != null && !element.trim().isEmpty()) {
                     if (checkItemIsInList(groceryList, element)) {
                         groceryList.remove(element.trim());
                     }
